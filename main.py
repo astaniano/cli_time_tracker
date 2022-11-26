@@ -1,20 +1,23 @@
 import sys
 
-from start_task import handle_start
-from stop_task import handle_stop
-from report_task import handle_report
-from log_task import handle_log
+from commands.start_task import handle_start
+from commands.stop_task import handle_stop
+from commands.report_task import handle_report
+from commands.log_task import handle_log
 
-if len(sys.argv) < 2:
+cli_args = sys.argv
+
+if len(cli_args) < 2:
     raise Exception('pls specify your command')
-command = sys.argv[1]
+
+command = cli_args[1]
 
 if command == 'start':
-    handle_start()
+    handle_start(cli_args)
 elif command == 'stop':
     handle_stop()
 elif command == 'report':
-    handle_report()
+    handle_report(cli_args)
 elif command == 'log':
     handle_log()
 else:
