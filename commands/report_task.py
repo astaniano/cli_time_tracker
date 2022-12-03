@@ -9,6 +9,7 @@ def handle_report(cli_args):
 
     if len(all_tasks) < 1:
         print("[]")
+        return
 
     last_task = all_tasks[-1]
 
@@ -17,11 +18,14 @@ def handle_report(cli_args):
         return
 
     report = {}
+    initial_date = datetime.fromisoformat("2022-11-03T23:16:36.721321")
+    total_time_on_all_tasks = initial_date
 
     for task in all_tasks:
         start_date = datetime.fromisoformat(task[task_start_key])
         end_date = datetime.fromisoformat(task[task_finish_key])
         time_spent_in_current_record = end_date - start_date
+        total_time_on_all_tasks = total_time_on_all_tasks + time_spent_in_current_record
                 
         task_name = task[task_name_key]
 
@@ -32,6 +36,8 @@ def handle_report(cli_args):
             total_time_on_task = time_spent_in_current_record
             
         report[task_name] = total_time_on_task
+
+    total_time_on_all_tasks = total_time_on_all_tasks - initial_date
 
     # check if there are any additional flags
     if len(cli_args) > 2:
@@ -50,4 +56,4 @@ def handle_report(cli_args):
         formatted_report[key] = f'{report[key]}'
 
     print(json.dumps(formatted_report, sort_keys=False, indent=2))
-
+    print(f'total_time_spent: {total_time_on_all_tasks}')
