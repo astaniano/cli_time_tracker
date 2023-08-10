@@ -1,6 +1,7 @@
 import json
+import os
 
-file_path = './11/20.json'
+file_path = os.environ['PATH_TO_LOG_FILE']
 
 def get_data():
     with open(file_path, 'r') as openfile:

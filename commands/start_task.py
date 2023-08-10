@@ -1,4 +1,3 @@
-import json
 from datetime import datetime
 
 from dal import get_data, save_data
@@ -6,7 +5,7 @@ from constants import task_in_progress, task_name_key, task_start_key, task_fini
 
 def handle_start(args):
     if len(args) < 3:
-        print('please supply the name for the task')
+        print('please specify a name for the task')
         return
 
     all_tasks = get_data()
@@ -26,4 +25,6 @@ def handle_start(args):
     })
 
     save_data(all_tasks)
+
+    print('a new task is started')
 

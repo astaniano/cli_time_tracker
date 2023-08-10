@@ -11,5 +11,9 @@
 10
 11
 12
+
 __pycache__
 .idea
+.vscode
+
+.env

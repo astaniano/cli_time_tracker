@@ -1,5 +1,8 @@
 import sys
 
+from parse_env_vars import load_env_vars
+load_env_vars()
+
 from commands.start_task import handle_start
 from commands.stop_task import handle_stop
 from commands.report_task import handle_report
@@ -21,5 +24,4 @@ elif command == 'report':
 elif command == 'log':
     handle_log()
 else:
-    print('unknown command')
-
+    raise Exception('Unknown command')

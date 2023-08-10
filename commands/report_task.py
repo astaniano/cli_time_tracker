@@ -1,7 +1,7 @@
 import json
 from datetime import datetime
 
-from dal import get_data, save_data
+from dal import get_data
 from constants import task_finish_key, task_in_progress, task_name_key, task_start_key, show_names_only
 
 def handle_report(cli_args):
