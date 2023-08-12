@@ -1,7 +1,7 @@
 import json
 import os
 
-file_path = os.environ['PATH_TO_LOG_FILE']
+file_path = os.environ['ABSOLUTE_PATH_TO_LOG_FILE']
 
 def get_data():
     with open(file_path, 'r') as openfile:

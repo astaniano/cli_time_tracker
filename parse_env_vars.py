@@ -1,7 +1,8 @@
 import os
 
 def load_env_vars():
-    with open('./.env', 'r') as openfile:
+    path_to_env_file = os.path.dirname(os.path.abspath(__file__)) + '/.env'
+    with open(path_to_env_file, 'r') as openfile:
         env_file = openfile.read()
 
     env_vars_list = env_file.split('\n')

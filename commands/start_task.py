@@ -24,5 +24,5 @@ def handle_start(args):
 
     save_data(all_tasks)
 
-    print('a new task was started')
+    print('a new task has been started')
 
