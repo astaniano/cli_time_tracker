@@ -14,12 +14,11 @@ def handle_report(cli_args):
     last_task = all_tasks[-1]
 
     if last_task[task_finish_key] == task_in_progress:
-        print('please stop your task first')
-        return
+        raise Exception('please stop your task first')
 
     report = {}
-    initial_date = datetime.fromisoformat("2022-11-03T23:16:36.721321")
-    total_time_on_all_tasks = initial_date
+    placeholder_for_a_date = datetime.fromisoformat("2022-11-03T23:16:36.721321")
+    total_time_on_all_tasks = placeholder_for_a_date
 
     for task in all_tasks:
         start_date = datetime.fromisoformat(task[task_start_key])
@@ -37,7 +36,7 @@ def handle_report(cli_args):
             
         report[task_name] = total_time_on_task
 
-    total_time_on_all_tasks = total_time_on_all_tasks - initial_date
+    total_time_on_all_tasks = total_time_on_all_tasks - placeholder_for_a_date
 
     # check if there are any additional flags
     if len(cli_args) > 2:

@@ -11,9 +11,9 @@ def load_env_vars():
         env_vars_list
     ))
 
-    for row in filtered_env_vars_list:
-        if '=' not in row:
+    for env_name_and_value_row in filtered_env_vars_list:
+        if '=' not in env_name_and_value_row:
             raise Exception('values of environmental variables should be specified in .env file after "=" sign')
 
-        env_name, env_val = row.split('=')
-        os.environ[env_name] = env_val 
+        env_name, env_val = env_name_and_value_row.split('=')
+        os.environ[env_name] = env_val
