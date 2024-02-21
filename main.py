@@ -15,11 +15,11 @@ if len(cli_args) < 2:
 
 command = cli_args[1]
 
-if command == 'start':
+if command == 'st':
     handle_start(cli_args)
-elif command == 'stop':
+elif command == 'sp':
     handle_stop()
-elif command == 'report':
+elif command == 'ls':
     handle_report(cli_args)
 elif command == 'log':
     handle_log()
