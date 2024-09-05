@@ -1,7 +1,7 @@
 from datetime import datetime
 
-from dal import get_data, save_data
-from constants import task_finish_key, task_in_progress
+from ..dal import get_data, save_data
+from ..constants import task_finish_key, task_in_progress
 
 def handle_stop():
     all_tasks = get_data()
