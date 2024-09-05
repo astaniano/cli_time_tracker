@@ -3,7 +3,7 @@ import os
 
 def get_path_to_log_file():
    tracker_folder_path = os.environ['ABSOLUTE_PATH_TO_CLI_TRACKER_FOLDER'] 
-   log_file_path = os.environ['PATH_TO_LOG_FILE'] 
+   log_file_path = os.environ['RELATIVE_PATH_TO_LOG_FILE'] 
 
    return os.path.join(tracker_folder_path, log_file_path)
  
