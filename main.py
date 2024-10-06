@@ -7,6 +7,7 @@ from lib.commands.start import handle_start
 from lib.commands.stop import handle_stop
 from lib.commands.report import handle_report
 from lib.commands.log import handle_log
+from lib.commands.path import handle_path
 
 path_to_current_dir = os.path.dirname(os.path.abspath(__file__))
 path_to_env_file = os.path.join(path_to_current_dir, '.env')
@@ -29,5 +30,7 @@ elif command == 'ls':
     handle_report(cli_args)
 elif command == 'log':
     handle_log()
+elif command == 'path':
+    handle_path()
 else:
     raise Exception('Unknown command')
