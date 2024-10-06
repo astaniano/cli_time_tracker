@@ -5,19 +5,25 @@
 - create `.env` file in the same folder that `main.py` is located in (see `.env.example` for an example)
 
 ### Usage:
+Create a new log file (based on the name specified in the RELATIVE_PATH_TO_LOG_FILE env var)
 ```bash
-# create a new log file (based on the name specified in the RELATIVE_PATH_TO_LOG_FILE env var)
 python3 main.py new
+```
 
-# start a new task
-python3 main.py run <task name>
+Start a new task
+```bash
+python3 main.py run task_name
+```
 
-# stop the last task
+Stop the last task
+```bash
 python3 main.py stop
+```
 
-# list all the tasks
-# please note this command can only be run if there is no other task currently in progress
-# in other words you need to run `python3 main.py stop` before running `ls` command
+list all the tasks  
+please note this command can only be run if there is no other task currently in progress  
+in other words you need to run `python3 main.py stop` before running `ls` command
+```bash
 python3 main.py ls
 ```
 
