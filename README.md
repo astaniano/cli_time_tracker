@@ -6,7 +6,7 @@
 
 ### Usage:
 ```bash
-# create a new log file
+# create a new log file (based on the name specified in the RELATIVE_PATH_TO_LOG_FILE env var)
 python3 main.py new
 
 # start a new task
