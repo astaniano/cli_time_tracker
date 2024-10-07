@@ -5,6 +5,8 @@
 - create `.env` file in the same folder that `main.py` is located in (see `.env.example` for an example)
 
 ### Usage:
+Create a new folder for logs (name it `logs`)
+
 Create a new log file (based on the name specified in the RELATIVE_PATH_TO_LOG_FILE env var)
 ```bash
 python3 main.py new
