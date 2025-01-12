@@ -2,10 +2,9 @@ import sys
 import os 
 
 from lib.parse_env_vars import load_env_vars
-from lib.commands.new import handle_new
-from lib.commands.start import handle_start
+from lib.commands.run import handle_run
 from lib.commands.stop import handle_stop
-from lib.commands.report import handle_report
+from lib.commands.ls import handle_ls
 from lib.commands.log import handle_log
 from lib.commands.path import handle_path
 
@@ -20,14 +19,12 @@ if len(cli_args) < 2:
 
 command = cli_args[1]
 
-if command == 'new':
-    handle_new()
-elif command == 'run':
-    handle_start(cli_args)
+if command == 'run':
+    handle_run(cli_args)
 elif command == 'stop':
     handle_stop()
 elif command == 'ls':
-    handle_report(cli_args)
+    handle_ls(cli_args)
 elif command == 'log':
     handle_log()
 elif command == 'path':

@@ -1,10 +1,12 @@
 import json
 from datetime import datetime
 
-from ..dal import get_data
+from ..dal import create_file_if_not_exist, get_data
 from ..constants import task_finish_key, task_in_progress, task_name_key, task_start_key, show_names_only
 
-def handle_report(cli_args):
+def handle_ls(cli_args):
+    create_file_if_not_exist()
+
     all_tasks = get_data()
 
     if len(all_tasks) < 1:

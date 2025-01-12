@@ -1,11 +1,13 @@
 from datetime import datetime
 
-from ..dal import get_data, save_data
+from ..dal import create_file_if_not_exist, get_data, save_data
 from ..constants import task_in_progress, task_name_key, task_start_key, task_finish_key
 
-def handle_start(args):
+def handle_run(args):
     if len(args) < 3:
         raise Exception('please specify a name for the task')
+ 
+    create_file_if_not_exist()
 
     all_tasks = get_data()
 
