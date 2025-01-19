@@ -1,10 +1,12 @@
 import json
 from datetime import datetime
 
-from ..dal import create_file_if_not_exist, get_data
+from ..dal import create_file_if_not_exist, get_data, get_relative_path_to_log_file
 from ..constants import task_finish_key, task_in_progress, task_name_key, task_start_key, show_names_only
 
 def handle_ls(cli_args):
+    print(get_relative_path_to_log_file())
+
     create_file_if_not_exist()
 
     all_tasks = get_data()
